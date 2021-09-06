@@ -3,6 +3,7 @@ const btnMemory1 = document.getElementById("btn-memory-1");
 const btnMemory2 = document.getElementById("btn-memory-2");
 const memoryCost = document.getElementById("memory-cost");
 
+
 btnMemory1.addEventListener('click', function () {
     memoryCost.innerText = 0;
     updateTotal()
@@ -60,6 +61,21 @@ function updateTotal() {
     const finalTotal = 1299 + memoryPrice + storagePrice + deliverAmount;
     total.innerText = finalTotal;
     lastTotal.innerText = finalTotal;
+    
+    document.getElementById('pomo').addEventListener('click', function(){
+      
+        let pomoField = document.getElementById('pomo-field').value;
+        
+        if( pomoField == 'stevekaku'){
+            const grandTotal = finalTotal - finalTotal * 20 /100;
+            lastTotal.innerText = grandTotal;
+        }
+        document.getElementById('pomo-field').value = '';
+
+})
+    
 }
 
-
+ 
+        
+    
